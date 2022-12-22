@@ -33,6 +33,11 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.save(customer);
     }
 
+    @Override
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
+    }
+
     static Customer unwrapCustomer(Optional<Customer> entity, Long id) {
         if (entity.isPresent())
             return entity.get();
