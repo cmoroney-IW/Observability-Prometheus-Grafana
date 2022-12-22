@@ -29,4 +29,11 @@ public class Customer {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
+    @Column(name = "age", nullable = false)
+    private int Age;
+
+    @NonNull
+    @Column(name = "sex", nullable = false)
+    private String sex;
+
 }

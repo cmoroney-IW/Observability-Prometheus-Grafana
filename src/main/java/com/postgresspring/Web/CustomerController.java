@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -23,6 +24,11 @@ public class CustomerController {
     @GetMapping("/all")
     public ResponseEntity<List<Customer>> getCustomer() {
         return new ResponseEntity<>(customerService.getCustomers(), HttpStatus.OK);
+    }
+
+    @GetMapping("/customer/{id}")
+    public ResponseEntity<Customer> getCustomerById(@PathVariable Long id) {
+        return new ResponseEntity<>(customerService.getCustomerById(id), HttpStatus.OK);
     }
 
     @PostMapping("/customer")
