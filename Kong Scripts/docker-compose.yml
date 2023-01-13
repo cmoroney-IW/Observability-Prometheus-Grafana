@@ -1,0 +1,12 @@
+version: "3"
+services:
+  curl:
+    container_name: curl
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: curl
+
+networks:
+  default:
+    name: kong-net

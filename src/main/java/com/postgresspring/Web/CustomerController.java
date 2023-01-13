@@ -19,7 +19,6 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Controller
-@RequestMapping("/customer")
 public class CustomerController {
 
     CustomerServiceImpl customerService;
