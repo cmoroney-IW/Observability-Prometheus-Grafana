@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.postgresspring.Entity.Customer;
 import com.postgresspring.Service.CustomerServiceImpl;
@@ -33,13 +32,13 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.getCustomerById(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("/create")
     public ResponseEntity<Customer> saveCustomer(@javax.validation.Valid @RequestBody Customer customer) {
         customerService.saveCustomer(customer);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
