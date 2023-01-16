@@ -7,17 +7,46 @@
 	},
 	"item": [
 		{
+			"name": "Create customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"User\",\r\n    \"age\": 17,\r\n    \"sex\": \"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/customer/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"customer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get customer by id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/:id",
+					"raw": "localhost:8000/customer/:id",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8000",
 					"path": [
+						"customer",
 						":id"
 					],
 					"query": [
@@ -38,70 +67,45 @@
 			"response": []
 		},
 		{
-			"name": "Get all customers",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/all",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"all"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create customer",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"User\",\r\n    \"age\": 17,\r\n    \"sex\": \"Male\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/create",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"create"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Delete customer by id",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/delete/:id",
+					"raw": "localhost:8000/customer/delete/:id",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8000",
 					"path": [
+						"customer",
 						"delete",
 						":id"
 					],
 					"variable": [
 						{
 							"key": "id",
-							"value": null
+							"value": "1"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/customer/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"customer",
+						"all"
 					]
 				}
 			},
