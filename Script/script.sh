@@ -15,17 +15,17 @@ done
 curl -i -X POST \
 --url http://kong:8001/services/ \
 --data name=GetAllCustomers \
---data 'url=http://postgres-spring:8080/all'
+--data 'url=http://postgres-spring:8000/all'
 curl -i -X POST \
 --url http://kong:8001/services/GetAllCustomers/routes/ \
     -H "Content-Type: application/json" \
-    -d '{"name": "allCustomers", "methods":["GET"], "hosts":["localhost"], "paths":["/all"]}'
+    -d '{"name": "allCustomers", "methods":["GET"], "hosts":["localhost"], "paths":["/"]}'
 
 
 curl -i -X POST \
 --url http://kong:8001/services/ \
 --data name=CreateCustomer \
---data 'url=http://postgres-spring:8080/create'
+--data 'url=http://postgres-spring:8000/create'
 curl -i -X POST \
 --url http://kong:8001/services/CreateCustomer/routes/ \
     -H "Content-Type: application/json" \
@@ -35,7 +35,7 @@ curl -i -X POST \
 curl -i -X POST \
 --url http://kong:8001/services/ \
 --data name=DeleteCustomer \
---data 'url=http://postgres-spring:8080/delete'
+--data 'url=http://postgres-spring:8000/delete'
 curl -i -X POST \
 --url http://kong:8001/services/DeleteCustomer/routes/ \
     -H "Content-Type: application/json" \
@@ -45,7 +45,7 @@ curl -i -X POST \
 curl -i -X POST \
 --url http://kong:8001/services/ \
 --data name=GetCustomer \
---data 'url=http://postgres-spring:8080/'
+--data 'url=http://postgres-spring:8000/'
 curl -i -X POST \
 --url http://kong:8001/services/GetCustomer/routes/ \
     -H "Content-Type: application/json" \
