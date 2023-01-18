@@ -1,15 +1,15 @@
 scrape_configs:
-  - job_name: "Microservice Monitor"
+  - job_name: "Microservice"
     metrics_path: "/actuator/prometheus"
     scrape_interval: 10s
     static_configs:
       - targets: ["localhost:8080"]
         labels:
-          application: "Microservice Monitor"
+          application: "Microservice"
 
-  - job_name: "Kong Monitor"
+  - job_name: "Kong"
     scrape_interval: 10s
     static_configs:
       - targets: ["localhost:8001"]
         labels:
-          application: "Kong Monitor"
+          application: "Kong"
