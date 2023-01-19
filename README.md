@@ -39,9 +39,10 @@
 - Next, on the left-hand sidebar hover over the icon with four boxes and click + Import
 - Click Upload JSON file and upload `microservice-dashboard.json` found within the prometheus folder of this directory
 - Select the data source previously created and then click Import. You will be directed to the dashboard page used to monitor the microservice APIs
+- Repeat the dashboard import steps instead uploading `kong-dashboard.json` in order to view a dashboard that monitors Kong APIs
 
 ## Testing
 
-- Open Postman and import Microservice.postman_collection from this directory
-- Test the microservice by creating, reading, and deleting customers from the database using the endpoints provided
-- Metrics can be observed by navigating to the dashboard previously created at `localhost:3000`
+- Open Postman and import both `Microservice.postman_collection.json` and `Kong.postman_collection.json` from this directory
+- Test both the microservice app as well as Kong endpoints by creating, reading, and deleting customers from the database using the Postman endpoints provided
+- Metrics can be observed by navigating to the dashboards previously created at `localhost:3000`
